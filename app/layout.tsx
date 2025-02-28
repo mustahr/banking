@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Serif } from "next/font/google";
 import "./globals.css";
+import Loader from "@/components/ui/Loader";
 
 const ibmPlexSerif = IBM_Plex_Serif({
   subsets: ["latin"],
@@ -23,7 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${ibmPlexSerif.variable} antialiased`}>{children}</body>
+      <body className={`${ibmPlexSerif.variable} antialiased`}>
+        <Loader />
+        {children}
+      </body>
     </html>
   );
 }
